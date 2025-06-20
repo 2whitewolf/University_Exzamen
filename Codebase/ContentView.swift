@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+    @StateObject private var authViewModel = AuthViewModel()
+       
+       var body: some View {
+           Group {
+               if authViewModel.user == nil {
+                   AuthView()
+               } else {
+                   ProjectListView()
+                       .environmentObject(authViewModel)
+               }
+           }
+       }
 }
 
 #Preview {
