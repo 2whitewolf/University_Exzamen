@@ -81,9 +81,6 @@ private let baseURL = ""
 Ensure your API supports the following endpoints:
 
 
-
-
-
 POST /auth/register: Accepts email, password, username; returns a token and user data (id, username, email).
 
 
@@ -106,32 +103,6 @@ PUT /projects/:id: Updates a project with the same fields as POST; returns the u
 
 DELETE /projects/:id: Deletes a project; returns a success status (e.g., 204).
 
-
-
-If using a mock API for testing:
-
-
-
-
-
-Install json-server:
-
-npm install -g json-server
-
-
-
-Create a db.json file with sample data (see Sample Data).
-
-
-
-Run the mock API:
-
-json-server --watch db.json
-
-
-
-Update baseURL to http://localhost:3000.
-
 3. Add Photo Library Permission
 
 
@@ -151,7 +122,7 @@ Add the following to your Info.plist to enable image picking:
 
 Open the project in Xcode:
 
-open ProjectPortfolio.xcodeproj
+open Codebase.xcodeproj
 
 
 
